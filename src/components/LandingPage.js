@@ -14,13 +14,13 @@ const LandingPage = () => {
 
     return(
         <div>
-            <div style={getContainerDetails('static/images/bg1.jpg')}>
+            <div style={getContainerDetails('static/images/bg1.jpeg')}>
             </div>
             <div style={getContainerDetails('static/images/bg2.jpeg')}>
             </div>
             <div style={getContainerDetails('static/images/bg3.jpeg')}>
             </div>
-            <div style={getContainerDetails('static/images/bg4.webp')}>
+            <div style={getContainerDetails('static/images/bg4.jpg')}>
             </div>
         </div>
     );

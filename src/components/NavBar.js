@@ -10,7 +10,7 @@ function NavBar() {
 
     return (
         <Navbar sticky="top" collapseOnSelect expand="lg">
-            <Container className="bg-body-tertiary" style={{borderRadius: "25px", padding: "25px", marginTop: "10px"}}>
+            <Container className="bg-body-tertiary" style={{borderRadius: "25px", padding: "25px", marginTop: "10px", opacity: ".7"}}>
                 <Navbar.Brand href="#home">Shreya Jain</Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
