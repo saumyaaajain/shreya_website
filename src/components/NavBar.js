@@ -5,11 +5,29 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Button, Form} from "react-bootstrap";
 import { IoSearchOutline } from 'react-icons/io5';
 import Overlay from "../utils/Overlay";
+import React, {useState, useEffect} from 'react'
 
 function NavBar() {
 
+    const [opacity, setOpacity] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const scrollPos = window.scrollY;
+            const windowHeight = window.innerHeight;
+            if (scrollPos <= windowHeight * 0.3) {
+                setOpacity(scrollPos / (windowHeight * 0.3));
+            } else {
+                setOpacity(1);
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
-        <Navbar sticky="top" collapseOnSelect expand="lg">
+        <Navbar sticky="top" collapseOnSelect expand="lg" style={{ opacity: `${opacity}` }}>
             <Container className="bg-body-tertiary" style={{borderRadius: "25px", padding: "25px", marginTop: "10px", opacity: ".7"}}>
                 <Navbar.Brand href="#home">Shreya Jain</Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">

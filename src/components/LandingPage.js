@@ -1,3 +1,5 @@
+import Footer from "./Footer";
+
 const LandingPage = () => {
 
     const getContainerDetails = (pathToImage) => {
@@ -18,10 +20,11 @@ const LandingPage = () => {
             </div>
             <div style={getContainerDetails('static/images/bg2.jpeg')}>
             </div>
-            <div style={getContainerDetails('static/images/bg3.jpeg')}>
+            <div style={getContainerDetails('static/images/bg3.jpg')}>
             </div>
-            <div style={getContainerDetails('static/images/bg4.jpg')}>
+            <div style={getContainerDetails('static/images/bg4.jpeg')}>
             </div>
+            <Footer />
         </div>
     );
 }
