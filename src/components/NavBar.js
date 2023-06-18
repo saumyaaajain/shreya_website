@@ -10,12 +10,16 @@ import React, {useState, useEffect} from 'react'
 function NavBar() {
 
     const [opacity, setOpacity] = useState(0);
+    const [display, setDisplay] = useState('none');
 
     useEffect(() => {
         const onScroll = () => {
+            setDisplay('')
             const scrollPos = window.scrollY;
             const windowHeight = window.innerHeight;
-            if (scrollPos <= windowHeight * 0.3) {
+            if (scrollPos <= windowHeight * 0.1) {
+                setDisplay('none')
+            } else if (scrollPos <= windowHeight * 0.3) {
                 setOpacity(scrollPos / (windowHeight * 0.3));
             } else {
                 setOpacity(1);
@@ -27,7 +31,7 @@ function NavBar() {
     }, []);
 
     return (
-        <Navbar sticky="top" collapseOnSelect expand="lg" style={{ opacity: `${opacity}` }}>
+        <Navbar sticky="top" collapseOnSelect expand="lg" style={{ opacity: `${opacity}`, display: `${display}`}}>
             <Container className="bg-body-tertiary" style={{borderRadius: "25px", padding: "25px", marginTop: "10px", opacity: ".7"}}>
                 <Navbar.Brand href="#home">Shreya Jain</Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
