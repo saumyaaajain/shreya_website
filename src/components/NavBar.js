@@ -17,8 +17,10 @@ function NavBar() {
             setDisplay('')
             const scrollPos = window.scrollY;
             const windowHeight = window.innerHeight;
+            console.log(windowHeight, scrollPos, scrollPos / (windowHeight * 0.3))
             if (scrollPos <= windowHeight * 0.1) {
                 setDisplay('none')
+                setOpacity(scrollPos / (windowHeight * 0.3));
             } else if (scrollPos <= windowHeight * 0.3) {
                 setOpacity(scrollPos / (windowHeight * 0.3));
             } else {
